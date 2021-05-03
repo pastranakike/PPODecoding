@@ -16,7 +16,7 @@ train_data = pd.read_csv('/content/drive/MyDrive/Graduate/Spring2021/CS7650/fina
                          sep='\t', names=['tgt_tag', 'tgt', 'src_tag', 'src'])
 
 
-env = DecodingEnv(model, tokenizer, test_set, 50, is_teacher_enforced=False)
+env = DecodingEnv(model, tokenizer, train_data, 50, is_teacher_enforced=False)
 check_env(env)
 
 checkpoint_callback = CheckpointCallback(save_freq=2500, save_path='/content/drive/MyDrive/Graduate/Spring2021/CS7650/final_project/default_hparams',
